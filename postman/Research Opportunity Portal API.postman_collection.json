@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "0b8e8ec4-0332-4700-8bbf-8de6a88d6e15",
+		"name": "Research Opportunity Portal API",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "58750901",
+		"_collection_link": "https://sohaibbukhari235-3129688.postman.co/workspace/Sohaib-Bukhari's-Workspace~836531a3-f18a-44bd-8892-27de03a0cee4/collection/58750901-0b8e8ec4-0332-4700-8bbf-8de6a88d6e15?action=share&source=collection_link&creator=58750901"
+	},
+	"item": [
+		{
+			"name": "Get data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"research_title\": \"AI-Based Healthcare Research\",\n    \"research_description\": \"Research project focused on using artificial intelligence to improve healthcare services and diagnosis.\",\n    \"research_area\": \"Artificial Intelligence\",\n    \"faculty_name\": \"Dr. Ahmed Khan\",\n    \"department\": \"Computer Science\",\n    \"required_skills\": \"Python, Machine Learning, Data Analysis\",\n    \"available_positions\": 3,\n    \"application_deadline\": \"2026-11-30\",\n    \"status\": \"Open\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Post data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "postman-echo.com/post",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"research_title\": \"Natural Language Processing Research\",\n    \"research_description\": \"Research project exploring natural language processing techniques for intelligent applications.\",\n    \"research_area\": \"Artificial Intelligence\",\n    \"faculty_name\": \"Dr. Ali Hassan\",\n    \"department\": \"Computer Science\",\n    \"required_skills\": \"Python, NLP, Deep Learning\",\n    \"available_positions\": 4,\n    \"application_deadline\": \"2026-12-20\",\n    \"status\": \"Open\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"research_title\": \"Cybersecurity Threat Detection\",\n    \"research_description\": \"Research project focused on detecting and analyzing cybersecurity threats using intelligent systems.\",\n    \"research_area\": \"Cybersecurity\",\n    \"faculty_name\": \"Dr. Sara Ahmed\",\n    \"department\": \"Computer Science\",\n    \"required_skills\": \"Networking, Python, Cybersecurity\",\n    \"available_positions\": 2,\n    \"application_deadline\": \"2026-12-10\",\n    \"status\": \"Open\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"research_title\": \"Machine Learning for Healthcare\",\n    \"research_description\": \"Research project focused on applying machine learning techniques to improve healthcare diagnosis.\",\n    \"research_area\": \"Machine Learning\",\n    \"faculty_name\": \"Dr. Ahmed Khan\",\n    \"department\": \"Computer Science\",\n    \"required_skills\": \"Python, Machine Learning, Data Analysis\",\n    \"available_positions\": 3,\n    \"application_deadline\": \"2026-11-30\",\n    \"status\": \"Open\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"research_title\": \"Advanced AI Healthcare Research\",\n    \"research_description\": \"Updated research project focused on artificial intelligence for healthcare diagnosis and services.\",\n    \"research_area\": \"Artificial Intelligence and Healthcare\",\n    \"faculty_name\": \"Dr. Ahmed Khan\",\n    \"department\": \"Computer Science\",\n    \"required_skills\": \"Python, Machine Learning, Deep Learning, Data Analysis\",\n    \"available_positions\": 4,\n    \"application_deadline\": \"2026-12-15\",\n    \"status\": \"Closed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"research_title\": \"Advanced AI Healthcare Research\",\n    \"research_description\": \"Updated research project focused on artificial intelligence for healthcare diagnosis and services.\",\n    \"research_area\": \"Artificial Intelligence and Healthcare\",\n    \"faculty_name\": \"Dr. Ahmed Khan\",\n    \"department\": \"Computer Science\",\n    \"required_skills\": \"Python, Machine Learning, Deep Learning, Data Analysis\",\n    \"available_positions\": 4,\n    \"application_deadline\": \"2026-12-15\",\n    \"status\": \"Open\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/opportunities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/opportunities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"opportunities"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
